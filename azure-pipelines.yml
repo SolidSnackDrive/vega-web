@@ -13,7 +13,7 @@ variables:
   dockerRegistryServiceConnection: '1feb0410-68dd-48ed-b93e-b2f5fc610a7e'
   imageRepository: 'sengteamvegaweb'
   containerRegistry: 'vegawebteam4.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/docker-compose.yml'
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
