@@ -67,4 +67,4 @@ stages:
       inputs:
         command: 'custom'
         workingDir: '.'
-        customCommand: 'run test'
+        customCommand: 'npm test -- --watchAll=false'
