@@ -63,3 +63,8 @@ stages:
         azureContainerRegistry: '{"loginServer":"vegawebteam4.azurecr.io", "id" : "/subscriptions/eddad6ab-c78b-4843-ab26-400912a94327/resourceGroups/SENG426/providers/Microsoft.ContainerRegistry/registries/vegawebteam4"}'
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Push services'
+    - task: Npm@1
+      inputs:
+        command: 'custom'
+        workingDir: '.'
+        customCommand: 'run test'
