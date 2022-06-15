@@ -13,7 +13,8 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '72c227b9-4939-4396-bd6f-6bf9015362ca'
-  imageRepository: 'sengteamvegaweb1'
+  imageRepository: 'sengteamvegaweb-frontend'
+  imageRepository2: 'sengteamvegaweb-server'
   containerRegistry: 'vegawebteam4.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   dockerfilePath2: '$(Build.SourcesDirectory)/server/Dockerfile'
@@ -44,7 +45,7 @@ stages:
       displayName: Build and push an image to container registry
       inputs:
         command: buildAndPush
-        repository: $(imageRepository)
+        repository: $(imageRepository2)
         dockerfile: $(dockerfilePath2)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
