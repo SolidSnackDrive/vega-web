@@ -5,15 +5,18 @@ import {UserContext} from '../../../auth/UserProvider.js';
 
 const VenusNavBar = (props) => {
   const {user} = useContext(UserContext);
-	var logout;
-  var resources;
-  var adminpanel;
+    var logout;
+    var signup = undefined;
+    var resources;
+    var adminpanel;
 
   if(user.username && user.jwt){
     console.log(user);
     logout = <Nav.Link href="/account">Logout</Nav.Link>;
+    signup = null;
   } else{
-    logout = <Nav.Link href="/login">Login/SignUp</Nav.Link>;
+    logout = <Nav.Link href="/login">Login</Nav.Link>;
+    signup = <Nav.Link href="/signup">Signup</Nav.Link>;
   }
 
   if(user.role == "ROLE_STAFF" || user.role == "ROLE_ADMIN"){
@@ -36,6 +39,9 @@ const VenusNavBar = (props) => {
         				<Nav.Link href="/contactus">Contact us</Nav.Link>
               <Nav.Item className="float-right">
                 {logout}
+              </Nav.Item>
+              <Nav.Item className="float-right">
+                {signup}
               </Nav.Item>
                 {adminpanel}
     			</Nav>

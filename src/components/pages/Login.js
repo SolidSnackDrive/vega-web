@@ -23,15 +23,15 @@ const Login = (props) => {
 			})
 	}
 
-		if(!auth){
-			return (
-				<UserRegistrationPageLayout>
-					<LoginUser onSubmit={onSubmit}/>
-				</UserRegistrationPageLayout>
-			);
-		} else {
-			return <Redirect to='/' />;
-		}
+    if(!auth){
+        return (
+            <UserRegistrationPageLayout>
+                <LoginUser onSubmit={onSubmit}/>
+            </UserRegistrationPageLayout>
+        );
+    } else {
+        return <Redirect to='/' />;
+    }
 }
 
 export default Login;
